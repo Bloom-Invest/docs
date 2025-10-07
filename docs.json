@@ -1,7 +1,7 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "Bloom Investment Platform",
   "colors": {
     "primary": "#16A34A",
     "light": "#07C983",
@@ -9,60 +9,51 @@
   },
   "favicon": "/favicon.svg",
   "navigation": {
+    "home": "index",
     "tabs": [
       {
         "tab": "Guides",
         "groups": [
           {
-            "group": "Getting started",
+            "group": "Getting Started",
             "pages": [
-              "index",
-              "quickstart",
-              "development"
+              "guides/how-to/getting-started",
+              "guides/platform/mobile-apps"
             ]
           },
           {
-            "group": "Customization",
+            "group": "Features",
             "pages": [
-              "essentials/settings",
-              "essentials/navigation"
+              "guides/features/ai-assistant",
+              "guides/features/daily-ideas",
+              "guides/features/market-digests",
+              "guides/features/watchlist"
             ]
           },
           {
-            "group": "Writing content",
+            "group": "How to Invest with Bloom",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
+              "guides/how-to/stock-research",
+              "guides/how-to/portfolio-analysis",
+              "guides/how-to/ai-prompts"
             ]
           },
           {
-            "group": "AI tools",
+            "group": "Use Cases",
             "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "API reference",
-        "groups": [
-          {
-            "group": "API documentation",
-            "pages": [
-              "api-reference/introduction"
+              "guides/use-cases/busy-professional",
+              "guides/use-cases/active-trader",
+              "guides/use-cases/long-term-investor"
             ]
           },
           {
-            "group": "Endpoint examples",
+            "group": "Platform & Technical",
             "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "guides/platform/mcp-integration",
+              "guides/platform/data-sources",
+              "guides/platform/technical-stack",
+              "guides/reference/ai-tools",
+              "guides/reference/comparison"
             ]
           }
         ]
@@ -71,14 +62,19 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
+          "anchor": "Web App",
+          "href": "https://investwithbloom.com",
+          "icon": "globe"
         },
         {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
+          "anchor": "iOS App",
+          "href": "https://apps.apple.com/app/bloom",
+          "icon": "mobile"
+        },
+        {
+          "anchor": "Android App",
+          "href": "https://play.google.com/store/apps/details?id=com.bloom",
+          "icon": "mobile"
         }
       ]
     }
@@ -91,32 +87,32 @@
     "links": [
       {
         "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "href": "mailto:support@investwithbloom.com"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Try Bloom",
+      "href": "https://investwithbloom.com"
     }
   },
   "contextual": {
     "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
+      "copy",
+      "view",
+      "chatgpt",
+      "claude",
+      "perplexity",
+      "mcp",
+      "cursor",
+      "vscode"
+    ]
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "twitter": "https://x.com/bloomInvest",
+      "github": "https://github.com/Bloom-Invest",
+      "linkedin": "https://linkedin.com/company/bloom-invest"
     }
   }
 }

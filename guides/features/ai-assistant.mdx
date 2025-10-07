@@ -1,0 +1,440 @@
+---
+title: "AI Investment Assistant"
+description: "Your Personal Research Analyst with 28 Specialized Tools"
+---
+
+## Overview
+
+Chat with an AI research analyst that has access to 28 specialized financial tools, real-time market data, and earnings transcripts. Get comprehensive analysis combining fundamentals, technicals, sentiment, and earnings insights—all sourced and backed by data.
+
+<Frame caption="Watch: Using the AI Assistant to research Apple stock">
+  <video
+    controls
+    style={{ width: '100%', borderRadius: '8px' }}
+  >
+    <source src="/assets/videos/aapl rotato.mp4" type="video/mp4" />
+  </video>
+</Frame>
+
+## Powered By
+
+<CardGroup cols={4}>
+  <Card title="GPT-4o" icon="brain">
+    Analysis and reasoning
+  </Card>
+  <Card title="Claude Sonnet" icon="file-text">
+    Document analysis
+  </Card>
+  <Card title="Llama 3.3 70B" icon="bolt">
+    High-speed inference
+  </Card>
+  <Card title="Groq/Cerebras" icon="rocket">
+    Ultra-low latency
+  </Card>
+</CardGroup>
+
+## What You Can Ask
+
+<AccordionGroup>
+  <Accordion title="Stock Analysis & Research" icon="chart-line">
+    **Example Queries:**
+    - "Should I buy Apple now?"
+    - "Analyze NVDA's earnings growth vs competitors"
+    - "What are the risks in investing in Tesla?"
+    - "Compare Meta and Google for long-term growth"
+
+    **What the AI Does:**
+    - Fetches current price and fundamentals (P/E, revenue growth, margins)
+    - Analyzes recent earnings trends and guidance
+    - Reviews technical indicators (RSI, moving averages, momentum)
+    - Searches transcripts for key management commentary
+    - Synthesizes insights into buy/hold/sell recommendation
+  </Accordion>
+
+  <Accordion title="Portfolio Management" icon="briefcase">
+    **Example Queries:**
+    - "Review my portfolio: 40% AAPL, 30% GOOGL, 20% MSFT, 10% TSLA"
+    - "What are the risks in my portfolio?"
+    - "How should I rebalance my holdings?"
+    - "Is my portfolio too concentrated in tech?"
+
+    **What the AI Does:**
+    - Analyzes sector and industry concentration
+    - Calculates correlation between holdings
+    - Identifies diversification gaps and risks
+    - Provides specific rebalancing recommendations
+    - Suggests defensive or complementary additions
+  </Accordion>
+
+  <Accordion title="Stock Screening" icon="filter">
+    **Example Queries:**
+    - "Find undervalued tech stocks with revenue growth over 20%"
+    - "Show me dividend stocks with yields above 4%"
+    - "Find momentum stocks with RSI under 70"
+    - "What are the best value stocks with P/E under 15?"
+
+    **What the AI Does:**
+    - Screens thousands of stocks using custom criteria
+    - Filters by fundamentals (P/E, revenue growth, margins, debt)
+    - Applies technical filters (RSI, moving averages, momentum)
+    - Returns ranked results with investment theses
+    - Provides detailed analysis for top candidates
+  </Accordion>
+
+  <Accordion title="Market Research" icon="magnifying-glass">
+    **Example Queries:**
+    - "What are the top momentum stocks in tech right now?"
+    - "Which sectors are outperforming this month?"
+    - "What's the market sentiment on AI stocks?"
+    - "Find stocks that beat earnings estimates recently"
+
+    **What the AI Does:**
+    - Searches real-time market data and news
+    - Analyzes sector trends and rotation patterns
+    - Aggregates sentiment from multiple sources
+    - Identifies stocks with positive catalysts
+    - Provides actionable investment opportunities
+  </Accordion>
+</AccordionGroup>
+
+## 28 Specialized Tools
+
+The AI assistant has access to 28 specialized financial tools organized by category:
+
+### Core Research Tools (3)
+
+<Columns cols={1}>
+  <Card title="get_symbols_metadata" icon="database">
+    Complete stock metadata including price, market cap, P/E ratio, revenue growth, EPS, dividend yield, 52-week high/low, and AI-powered investment ratings
+  </Card>
+  <Card title="research_stock" icon="chart-bar">
+    Fundamental analysis with comprehensive investment ratings, risk assessment, valuation metrics, growth prospects, and competitive positioning
+  </Card>
+  <Card title="analyze_earnings" icon="calculator">
+    Earnings analysis with historical results, estimates vs actuals, earnings surprises, growth trends, and forward guidance insights
+  </Card>
+</Columns>
+
+### Advanced Research (3)
+
+<Columns cols={1}>
+  <Card title="analyze_technicals" icon="chart-candlestick">
+    Technical indicators including RSI, moving averages (50/200 SMA), Bollinger bands, MACD, volume analysis, and chart patterns
+  </Card>
+  <Card title="search_transcript" icon="search">
+    Keyword search in earnings call transcripts to find specific management commentary, guidance, risks, and strategic initiatives
+  </Card>
+  <Card title="get_symbol_charts" icon="chart-line">
+    Interactive price charts across multiple timeframes (1D, 1W, 1M, 3M, 1Y, 5Y) with volume and technical overlays
+  </Card>
+</Columns>
+
+### Market & Sentiment (2)
+
+<Columns cols={1}>
+  <Card title="get_market_sentiment" icon="heart-pulse">
+    Unified sentiment analysis from news sources, social media, analyst ratings, and insider trading activity
+  </Card>
+  <Card title="fetch_url_content" icon="globe">
+    Fetch and analyze any web content with AI-powered summarization—useful for researching company websites, news articles, and reports
+  </Card>
+</Columns>
+
+### Portfolio Tools (3)
+
+<Columns cols={1}>
+  <Card title="analyze_portfolio" icon="briefcase">
+    Portfolio review with buy/sell/hold recommendations, diversification analysis, risk assessment, and rebalancing suggestions
+  </Card>
+  <Card title="filter_stocks" icon="filter">
+    Screen stocks by fundamental criteria (P/E, revenue growth, margins, debt ratios) with custom expression support
+  </Card>
+  <Card title="analyze_trades" icon="scale-balanced">
+    Trade quality analysis for buy/sell decisions with timing evaluation, risk/reward assessment, and entry/exit recommendations
+  </Card>
+</Columns>
+
+### Collections & Reports (2)
+
+<Columns cols={1}>
+  <Card title="present_collection_cards" icon="layer-group">
+    Access curated stock collections like Top Momentum, Dividend Aristocrats, Undervalued Gems, and Sector Leaders
+  </Card>
+  <Card title="get_all_research_reports" icon="file-chart-column">
+    Retrieve recent AI-generated research reports with detailed analysis and investment theses
+  </Card>
+</Columns>
+
+### Web Search (1)
+
+<Columns cols={1}>
+  <Card title="search_web" icon="magnifying-glass-chart">
+    Real-time web search for investment information with AI-powered filtering and summarization
+  </Card>
+</Columns>
+
+<Info>
+  **Note:** The AI automatically selects which tools to use based on your question. You don't need to specify tools—just ask naturally!
+</Info>
+
+## Example Workflows
+
+### Workflow 1: Deep Stock Research
+
+<Steps>
+  <Step title="Ask a research question">
+    **User:** "Should I invest in Nvidia at current prices?"
+  </Step>
+
+  <Step title="AI gathers fundamental data">
+    Calls `get_symbols_metadata(["NVDA"])` to fetch:
+    - Current price: $875
+    - P/E ratio: 45
+    - Revenue growth: 122% YoY
+    - Market cap: $2.1T
+    - AI rating: Strong Buy
+  </Step>
+
+  <Step title="AI analyzes earnings">
+    Calls `analyze_earnings("NVDA")` to review:
+    - Earnings growth trend: +427% YoY
+    - Beat estimates by 18% last quarter
+    - Guidance: Strong data center demand
+    - EPS forecast: $25-27 for next year
+  </Step>
+
+  <Step title="AI checks technicals">
+    Calls `analyze_technicals("NVDA")` to assess:
+    - RSI: 62 (neutral, not overbought)
+    - Price above 50/200 SMA (bullish trend)
+    - Volume: Higher than average
+    - Support level: $850
+  </Step>
+
+  <Step title="AI searches transcripts">
+    Calls `search_transcript("NVDA", ["guidance", "data center"])` to find:
+    - "Data center revenue up 427% YoY"
+    - "AI accelerator demand exceeds supply"
+    - "Blackwell chip seeing strong early orders"
+  </Step>
+
+  <Step title="AI provides recommendation">
+    **Bloom Agent Response:**
+
+    **Rating: BUY**
+
+    **Reasoning:**
+    - Strong fundamental growth (122% revenue, 427% earnings)
+    - Positive technical setup (above key moving averages, healthy RSI)
+    - Bullish management guidance on AI accelerators
+    - Valuation reasonable given growth (PEG ratio: 0.4)
+
+    **Risks:**
+    - High valuation multiples (P/E: 45)
+    - Concentration risk in data center segment
+    - Competition from AMD and custom chips
+
+    **Recommendation:** Consider accumulating on dips to $850 support
+  </Step>
+</Steps>
+
+### Workflow 2: Portfolio Analysis
+
+<Steps>
+  <Step title="Submit portfolio for review">
+    **User:** "Review my portfolio: 40% AAPL, 30% GOOGL, 20% MSFT, 10% TSLA"
+  </Step>
+
+  <Step title="AI analyzes allocation">
+    Calls `analyze_portfolio` with holdings dictionary:
+    - Detects 100% concentration in tech sector
+    - Identifies high correlation (avg: 0.72)
+    - Calculates sector exposure and risk metrics
+  </Step>
+
+  <Step title="AI identifies risks">
+    **Key Findings:**
+    - **Sector Concentration:** 100% technology (high risk)
+    - **Correlation:** AAPL-MSFT correlation: 0.85 (move together)
+    - **Volatility:** Portfolio beta: 1.35 (35% more volatile than market)
+    - **Diversification Score:** 3/10 (poor)
+  </Step>
+
+  <Step title="AI provides recommendations">
+    **Rebalancing Suggestions:**
+
+    **Reduce Tech Exposure (to 60-70%):**
+    - Trim AAPL to 25% (-15%)
+    - Trim GOOGL to 20% (-10%)
+    - Hold MSFT at 20%
+    - Consider selling TSLA (10%)
+
+    **Add Defensive Sectors (30-40%):**
+    - Healthcare: 15% (JNJ, UNH)
+    - Utilities: 10% (NEE, DUK)
+    - Consumer Staples: 10% (PG, KO)
+
+    **Expected Impact:**
+    - Reduce portfolio beta to ~1.1
+    - Lower correlation to 0.5
+    - Improve diversification score to 7/10
+  </Step>
+</Steps>
+
+### Workflow 3: Stock Screening
+
+<Steps>
+  <Step title="Define screening criteria">
+    **User:** "Find undervalued tech stocks with revenue growth over 20%"
+  </Step>
+
+  <Step title="AI applies filters">
+    Calls `filter_stocks` with expressions:
+    - Sector = Technology
+    - Revenue growth > 20%
+    - P/E < 20 (undervalued)
+    - Market cap > $1B (liquid stocks)
+  </Step>
+
+  <Step title="AI returns results">
+    **Top 10 Matches:**
+    1. AMD - P/E: 18, Rev Growth: 54%
+    2. ADBE - P/E: 19, Rev Growth: 22%
+    3. CRM - P/E: 17, Rev Growth: 25%
+    4. NOW - P/E: 19, Rev Growth: 26%
+    5. PANW - P/E: 18, Rev Growth: 24%
+    ... (5 more)
+  </Step>
+
+  <Step title="AI analyzes top candidates">
+    Calls `get_symbols_metadata` for top 3 candidates:
+
+    **AMD Analysis:**
+    - Valuation: Attractive (P/E: 18 vs sector avg: 28)
+    - Growth: Strong (54% revenue growth)
+    - Catalysts: Data center chip demand, AI accelerators
+    - Rating: BUY
+
+    **ADBE Analysis:**
+    - Valuation: Fair (P/E: 19)
+    - Growth: Solid (22% driven by Creative Cloud)
+    - Catalysts: AI features in Photoshop, Firefly momentum
+    - Rating: HOLD
+
+    **CRM Analysis:**
+    - Valuation: Compelling (P/E: 17 vs historical: 35)
+    - Growth: Strong (25% from AI products)
+    - Catalysts: Agentforce AI platform, margin expansion
+    - Rating: STRONG BUY
+  </Step>
+
+  <Step title="AI summarizes findings">
+    **Best Opportunities:**
+    - **CRM (Salesforce):** Best risk/reward with AI-driven growth
+    - **AMD:** Strong growth but more volatile
+    - **PANW:** Cybersecurity leader with consistent execution
+
+    **Next Steps:** Research CRM's Agentforce platform adoption
+  </Step>
+</Steps>
+
+## Getting Started
+
+<Steps>
+  <Step title="Open Bloom">
+    Launch the Bloom web app or mobile app
+  </Step>
+
+  <Step title="Click the Chat icon">
+    Look for the chat/message icon in the navigation bar
+  </Step>
+
+  <Step title="Type your investment question">
+    Ask naturally—the AI will understand and use the right tools
+  </Step>
+
+  <Step title="Watch the AI research">
+    See in real-time which tools the AI uses and how it analyzes data
+  </Step>
+
+  <Step title="Review the sourced answer">
+    Get comprehensive analysis with data citations and reasoning
+  </Step>
+</Steps>
+
+<Card
+  title="Try the AI Assistant"
+  icon="rocket"
+  href="https://investwithbloom.com"
+>
+  Start asking investment questions and get AI-powered insights backed by data
+</Card>
+
+## Tips for Effective Prompts
+
+<AccordionGroup>
+  <Accordion title="Be Specific" icon="bullseye">
+    **Good:** "Should I buy Microsoft now given their cloud growth?"
+
+    **Better:** "Analyze MSFT considering Azure growth, AI products, and valuation vs historical P/E"
+
+    Specificity helps the AI understand exactly what aspects to focus on.
+  </Accordion>
+
+  <Accordion title="Ask Follow-Up Questions" icon="comments">
+    The AI remembers context from your conversation. Build on previous answers:
+
+    - "What are the main risks?"
+    - "How does this compare to its competitors?"
+    - "What's the best entry price?"
+  </Accordion>
+
+  <Accordion title="Request Specific Formats" icon="list">
+    You can ask for structured responses:
+
+    - "Give me a bull and bear case for Tesla"
+    - "Create a 5-point checklist for evaluating this stock"
+    - "Compare these 3 stocks in a table"
+  </Accordion>
+
+  <Accordion title="Combine Multiple Analyses" icon="layer-group">
+    The AI can handle complex multi-part questions:
+
+    - "Analyze Apple's fundamentals, then check if the technicals support buying now"
+    - "Review my portfolio and suggest 3 defensive stocks to add"
+    - "Find high-growth healthcare stocks and analyze the top 3"
+  </Accordion>
+</AccordionGroup>
+
+## Learn More
+
+<CardGroup cols={2}>
+  <Card
+    title="AI Prompt Guide"
+    icon="comments"
+    href="/guides/how-to/ai-prompts"
+  >
+    Master effective prompts and query patterns
+  </Card>
+  <Card
+    title="All 28 AI Tools"
+    icon="tools"
+    href="/guides/reference/ai-tools"
+  >
+    Complete reference for every tool available
+  </Card>
+  <Card
+    title="Stock Research Workflow"
+    icon="magnifying-glass-chart"
+    href="/guides/how-to/stock-research"
+  >
+    Step-by-step research methodologies
+  </Card>
+  <Card
+    title="Portfolio Analysis"
+    icon="briefcase"
+    href="/guides/how-to/portfolio-analysis"
+  >
+    Deep dive into portfolio optimization
+  </Card>
+</CardGroup>

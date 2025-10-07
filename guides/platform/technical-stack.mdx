@@ -1,0 +1,379 @@
+---
+title: "Technical Stack"
+description: "Bloom's Technology Architecture"
+---
+
+## Overview
+
+Bloom is built with modern technologies optimized for performance, scalability, and developer productivity. This page provides a technical overview of our architecture.
+
+## Backend
+
+### Django 5.2 + Django REST Framework
+
+**Core API:**
+- 80+ RESTful endpoints
+- Token-based authentication (JWT)
+- API rate limiting and throttling
+- OpenAPI documentation (Swagger/Redoc)
+
+**Key Features:**
+- Async ORM support for I/O-bound tasks
+- Custom middleware for logging and monitoring
+- Database query optimization (select_related, prefetch_related)
+- Background task scheduling with Huey
+
+---
+
+### PostgreSQL
+
+**Database:**
+- Primary data store for users, watchlists, portfolios
+- JSONB fields for flexible schema (stock metadata)
+- Full-text search with GIN indexes
+- Partitioning for historical price data
+
+**Performance:**
+- Connection pooling (pgBouncer)
+- Read replicas for scaling
+- Automated backups (daily)
+
+---
+
+### Redis
+
+**Caching & Task Queue:**
+- Cache Layer: 15-minute TTL for API responses
+- Session Store: User sessions and auth tokens
+- Task Queue: Huey background jobs
+- Rate Limiting: Per-user API quotas
+
+**Benefits:**
+- 10x faster response times (cache hits)
+- Reduced database load
+- Async processing for heavy tasks
+
+---
+
+### Huey Task Queue
+
+**Background Jobs:**
+- Daily Ideas generation (runs nightly)
+- Earnings data updates
+- Push notification delivery
+- Email digests (morning/evening)
+- Data backfills
+
+**Configuration:**
+- Redis backend
+- 4 worker processes
+- Retry logic for failed tasks
+
+## Frontend
+
+### React 17 + TypeScript 4.9
+
+**Web Application:**
+- Component-based architecture
+- Type safety with TypeScript
+- Functional components with hooks
+- Code splitting for performance
+
+---
+
+### Chakra UI
+
+**Design System:**
+- Pre-built accessible components
+- Dark mode support
+- Responsive design (mobile-first)
+- Customizable theme (Bloom green)
+
+**Benefits:**
+- Consistent UI across app
+- Accessibility (WCAG 2.1 AA)
+- Fast development
+
+---
+
+### React Query
+
+**State Management:**
+- Server state synchronization
+- Automatic caching and refetching
+- Optimistic updates
+- Pagination and infinite scroll
+
+**Why Not Redux?**
+- React Query handles async state better
+- Less boilerplate code
+- Built-in devtools
+
+---
+
+### Vite
+
+**Build System:**
+- Fast HMR (Hot Module Replacement) < 50ms
+- Optimized production builds
+- Tree-shaking for smaller bundles
+- Modern ESM-based architecture
+
+**Bundle Sizes:**
+- Initial: 250 KB gzipped
+- Lazy-loaded routes: 50-100 KB each
+
+## Mobile Apps
+
+### Capacitor v6
+
+**Native Bridge:**
+- Single codebase for iOS and Android
+- Native APIs (camera, notifications, biometrics)
+- WebView-based with native shell
+- Over-the-air updates
+
+**Plugins Used:**
+- @capacitor/push-notifications
+- @capacitor/biometric-auth
+- @capacitor/share
+- @capacitor/storage
+
+---
+
+### Performance
+
+**Metrics:**
+- First load: < 2 seconds
+- Page transitions: < 200ms
+- Smooth scrolling: 60 FPS
+- Memory usage: < 100 MB
+
+## AI Architecture
+
+### Multi-Model Strategy
+
+**Why Multiple Models?**
+- **Speed:** Groq/Cerebras for fast inference
+- **Quality:** GPT-4o for complex reasoning
+- **Cost:** Llama 3.3 70B for bulk processing
+- **Specialization:** Claude for documents
+
+---
+
+### Model Routing Logic
+
+```python
+def select_model(task_type):
+    if task_type == "chat":
+        return "groq-llama-70b"  # Speed priority
+    elif task_type == "transcript_analysis":
+        return "claude-sonnet"  # Long context
+    elif task_type == "description_generation":
+        return "gpt-4o-mini"  # Quality + cost balance
+    elif task_type == "embeddings":
+        return "text-embedding-3-large"
+```
+
+---
+
+### Streaming Responses
+
+**Server-Sent Events (SSE):**
+- Real-time AI responses (token-by-token)
+- Client receives partial responses
+- Better UX (no waiting 30 seconds)
+
+**Implementation:**
+- Django Channels for WebSockets
+- SSE endpoint for streaming
+- Fallback to long-polling
+
+## Infrastructure
+
+### Render
+
+**Deployment:**
+- Auto-scaling web services (2-10 instances)
+- Managed PostgreSQL (Pro 4GB plan)
+- Managed Redis (Starter plan)
+- Auto-deploy from GitHub (main branch)
+
+**Regions:**
+- Primary: US East (Ohio)
+- Failover: US West (Oregon)
+
+---
+
+### CI/CD
+
+**Automated Pipeline:**
+1. Push to GitHub (main branch)
+2. Run tests (pytest, Jest)
+3. Build Docker image
+4. Deploy to Render
+5. Run migrations
+6. Smoke tests
+7. Notify team (Slack)
+
+**Deployment Frequency:** 2-5 times per day
+
+---
+
+### Monitoring
+
+**Sentry:**
+- Error tracking and alerting
+- Performance monitoring (slow queries)
+- Release tracking
+- User impact analysis
+
+**PostHog:**
+- Product analytics
+- User behavior funnels
+- Feature flags
+- A/B testing
+
+**Custom Dashboards:**
+- Grafana for metrics (CPU, memory, requests/sec)
+- Prometheus for time-series data
+
+## Security
+
+### Authentication
+
+- JWT tokens (access: 1 hour, refresh: 30 days)
+- Password hashing: bcrypt (cost factor: 12)
+- 2FA support (TOTP)
+- Rate limiting: 1000 requests/hour per user
+
+---
+
+### Data Encryption
+
+- **In Transit:** TLS 1.3 (all connections)
+- **At Rest:** AES-256 (database, backups)
+- **API Keys:** Hashed with SHA-256
+- **Secrets:** AWS Secrets Manager
+
+---
+
+### Compliance
+
+- SOC 2 Type II certified
+- GDPR compliant (EU data residency)
+- CCPA compliant (California users)
+- Regular security audits (quarterly)
+
+## Performance
+
+### Response Times
+
+| Endpoint | P50 | P95 | P99 |
+|----------|-----|-----|-----|
+| **GET /stocks/:symbol** | 120ms | 250ms | 500ms |
+| **POST /ai/chat** | 2s | 5s | 10s |
+| **GET /watchlist** | 80ms | 150ms | 300ms |
+| **GET /collections** | 100ms | 200ms | 400ms |
+
+### Database Query Performance
+
+- **Indexes:** 50+ optimized indexes
+- **Query Time:** 95% under 50ms
+- **Connection Pool:** 20 connections (web), 10 (workers)
+
+### Caching Hit Rates
+
+- Stock metadata: 85% (15-min TTL)
+- User watchlists: 90% (5-min TTL)
+- Daily Ideas: 95% (24-hour TTL)
+
+## Scalability
+
+### Current Scale
+
+- **Users:** 10,000+ active
+- **Requests:** 5M/month
+- **AI Queries:** 50K/month
+- **Database Size:** 50 GB
+- **Uptime:** 99.9%
+
+### Capacity
+
+- **Max Users:** 100K (current infra)
+- **Max Requests:** 50M/month
+- **Bottleneck:** AI inference costs
+
+### Future Plans
+
+- Horizontal scaling (10+ web servers)
+- Database sharding (by user)
+- CDN for static assets (Cloudflare)
+- Edge caching (Vercel Edge Functions)
+
+## Developer Tools
+
+### Code Quality
+
+- **Linting:** ESLint (frontend), Ruff (backend)
+- **Formatting:** Prettier (JS/TS), Black (Python)
+- **Type Checking:** TypeScript, mypy
+- **Testing:** Jest (frontend), pytest (backend)
+
+### Testing
+
+- **Unit Tests:** 80%+ coverage
+- **Integration Tests:** Key user flows
+- **E2E Tests:** Playwright (critical paths)
+- **LLM Testing:** DeepEval (AI quality)
+
+### Documentation
+
+- **API Docs:** OpenAPI/Swagger (auto-generated)
+- **Code Comments:** JSDoc, Docstrings
+- **Architecture Docs:** Markdown in /docs
+- **User Docs:** This Mintlify site
+
+## Open Source
+
+**Public Repositories:**
+- MCP Server: `@bloom/mcp-server` (NPM)
+- Testing Utils: `bloom-testing` (GitHub)
+
+**Private:**
+- Core application code
+- AI prompt engineering
+- Database schemas
+
+## Learn More
+
+<CardGroup cols={2}>
+  <Card
+    title="Data Sources"
+    icon="database"
+    href="/guides/platform/data-sources"
+  >
+    Learn about our 20+ data providers
+  </Card>
+  <Card
+    title="MCP Integration"
+    icon="plug"
+    href="/guides/platform/mcp-integration"
+  >
+    Connect Bloom to Claude Desktop
+  </Card>
+  <Card
+    title="AI Assistant"
+    icon="robot"
+    href="/guides/features/ai-assistant"
+  >
+    See our AI architecture in action
+  </Card>
+  <Card
+    title="Mobile Apps"
+    icon="mobile"
+    href="/guides/platform/mobile-apps"
+  >
+    Native iOS and Android apps
+  </Card>
+</CardGroup>

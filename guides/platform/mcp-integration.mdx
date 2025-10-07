@@ -1,0 +1,223 @@
+---
+title: "MCP Integration"
+description: "Connect Bloom to Claude Desktop for Power Users"
+---
+
+## Overview
+
+Bloom's Model Context Protocol (MCP) server enables Claude Desktop users to access 13 investment research tools directly from their AI assistant—no browser needed. This integration is ideal for power users who want to combine Claude's conversational AI with Bloom's investment data.
+
+## What is MCP?
+
+**Model Context Protocol (MCP)** is Anthropic's standard for connecting AI assistants to external tools and data sources. It allows Claude Desktop to seamlessly invoke Bloom's investment research functions.
+
+## Available MCP Tools (13)
+
+1. **get_symbols_metadata** - Stock metadata and fundamentals
+2. **search_transcript** - Earnings transcript search
+3. **analyze_earnings** - Earnings analysis
+4. **generate_catalysts** - 1-year and 3-year investment catalysts
+5. **analyze_technicals** - Technical analysis with charts
+6. **get_market_sentiment** - Market sentiment indicators
+7. **analyze_portfolio** - Portfolio review and recommendations
+8. **filter_stocks** - Fundamental stock screening
+9. **analyze_trades** - Trade quality analysis
+10. **present_collection_cards** - Curated stock collections
+11. **get_all_research_reports** - AI research reports
+12. **search_web** - Web search for investment info
+13. **fetch_url_content** - URL content extraction
+
+## Setup Instructions
+
+<Steps>
+  <Step title="Install Claude Desktop">
+    Download Claude Desktop from [claude.ai/download](https://claude.ai/download)
+  </Step>
+
+  <Step title="Get Your Bloom API Key">
+    1. Log in to Bloom web app
+    2. Go to Settings → API Keys
+    3. Click "Generate New API Key"
+    4. Copy the key (starts with `bloom_`)
+  </Step>
+
+  <Step title="Configure MCP Server">
+    Add Bloom MCP server to Claude Desktop config:
+
+    **On macOS:**
+    ```bash
+    ~/.claude/config.json
+    ```
+
+    **On Windows:**
+    ```bash
+    %APPDATA%\Claude\config.json
+    ```
+
+    **Add this JSON:**
+    ```json
+    {
+      "mcpServers": {
+        "bloom": {
+          "command": "npx",
+          "args": ["-y", "@bloom/mcp-server"],
+          "env": {
+            "BLOOM_API_KEY": "your_bloom_api_key_here"
+          }
+        }
+      }
+    }
+    ```
+  </Step>
+
+  <Step title="Restart Claude Desktop">
+    Close and reopen Claude Desktop to load the MCP server
+  </Step>
+
+  <Step title="Test the Integration">
+    In Claude Desktop, ask: "Using Bloom, analyze Apple's recent earnings"
+
+    Claude should invoke Bloom's MCP tools and return investment analysis.
+  </Step>
+</Steps>
+
+## Example Use Cases
+
+### Investment Research
+
+**Prompt to Claude:**
+```
+"Using Bloom, analyze Microsoft's fundamentals, recent earnings, and
+technical indicators. Should I buy at current prices?"
+```
+
+**What Happens:**
+- Claude invokes `get_symbols_metadata` for MSFT
+- Calls `analyze_earnings` for recent results
+- Uses `analyze_technicals` for entry timing
+- Synthesizes findings into recommendation
+
+---
+
+### Portfolio Analysis
+
+**Prompt:**
+```
+"Using Bloom, analyze my portfolio: 30% AAPL, 25% GOOGL, 20% MSFT,
+15% NVDA, 10% AMZN. What are the risks?"
+```
+
+**What Happens:**
+- Claude calls `analyze_portfolio` with holdings
+- Returns diversification analysis
+- Highlights risks (concentration, correlation)
+- Suggests rebalancing
+
+---
+
+### Stock Screening
+
+**Prompt:**
+```
+"Using Bloom, find undervalued tech stocks with P/E < 20 and
+revenue growth > 20%"
+```
+
+**What Happens:**
+- Claude invokes `filter_stocks` with criteria
+- Returns matching stocks
+- Provides key metrics for each
+- Ranks by attractiveness
+
+## Advantages of MCP Integration
+
+<CardGroup cols={2}>
+  <Card title="Seamless Workflow" icon="arrow-right-arrow-left">
+    Research within your existing Claude Desktop workflow—no context switching
+  </Card>
+  <Card title="Conversational Interface" icon="comments">
+    Ask questions naturally, Claude handles tool invocation automatically
+  </Card>
+  <Card title="Combine with Claude's Knowledge" icon="brain">
+    Claude can synthesize Bloom data with its broader knowledge
+  </Card>
+  <Card title="Custom Workflows" icon="gears">
+    Build complex multi-step research workflows with Claude's reasoning
+  </Card>
+</CardGroup>
+
+## MCP vs Web App
+
+| Capability | MCP (Claude Desktop) | Bloom Web App |
+|------------|---------------------|---------------|
+| **AI Assistant** | Claude (Anthropic) | Multi-model (GPT, Claude, Llama) |
+| **Investment Tools** | 13 core tools | 28 specialized tools |
+| **Interface** | Claude Desktop chat | Bloom web/mobile UI |
+| **Charts & Visuals** | Text-based data | Interactive charts |
+| **Watchlists** | ❌ | ✅ |
+| **Push Notifications** | ❌ | ✅ (mobile) |
+| **Daily Ideas** | Limited | ✅ Full collections |
+| **Best For** | Power users, custom workflows | Most users, comprehensive features |
+
+<Info>
+**Recommendation:** Use MCP if you're already a Claude Desktop power user. For most investors, the Bloom web/mobile app provides a more complete experience.
+</Info>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="MCP server not loading" icon="circle-exclamation">
+    **Check:**
+    - API key is correct (starts with `bloom_`)
+    - config.json syntax is valid (use jsonlint.com)
+    - Claude Desktop was restarted after config change
+
+    **Test:**
+    - Ask Claude: "What tools do you have access to?"
+    - Should list Bloom tools if MCP server loaded
+  </Accordion>
+
+  <Accordion title="Tools return errors" icon="triangle-exclamation">
+    **Common Issues:**
+    - API key expired (generate new one)
+    - Rate limit exceeded (wait 1 minute, try again)
+    - Invalid stock ticker (check spelling)
+
+    **Solution:**
+    - Check API key status in Bloom Settings
+    - Verify your subscription tier supports MCP access
+  </Accordion>
+</AccordionGroup>
+
+## Learn More
+
+<CardGroup cols={2}>
+  <Card
+    title="Getting Started"
+    icon="rocket"
+    href="/guides/how-to/getting-started"
+  >
+    Set up Bloom account first
+  </Card>
+  <Card
+    title="AI Assistant"
+    icon="robot"
+    href="/guides/features/ai-assistant"
+  >
+    See all available tools
+  </Card>
+  <Card
+    title="Technical Stack"
+    icon="code"
+    href="/guides/platform/technical-stack"
+  >
+    Learn about Bloom's architecture
+  </Card>
+  <Card
+    title="Data Sources"
+    icon="database"
+    href="/guides/platform/data-sources"
+  >
+    Understand our data providers
+  </Card>
+</CardGroup>
