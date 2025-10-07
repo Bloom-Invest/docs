@@ -1,0 +1,546 @@
+---
+title: "Effective AI Prompts"
+description: "Write Better Prompts for Better Investment Insights"
+---
+
+## Overview
+
+Learn how to write effective prompts to get the most value from Bloom's AI Assistant. The quality of your questions directly impacts the quality of insights you receive.
+
+## Prompt Writing Principles
+
+### 1. Be Specific
+
+<Columns cols={2}>
+  <div>
+    **❌ Vague:**
+    - "Tell me about Apple"
+    - "Is this stock good?"
+    - "What should I buy?"
+  </div>
+  <div>
+    **✅ Specific:**
+    - "Analyze Apple's Services revenue growth and margin trends"
+    - "Should I buy Microsoft given its current P/E of 35 and 15% growth rate?"
+    - "Find undervalued healthcare stocks with P/E < 15 and revenue growth > 20%"
+  </div>
+</Columns>
+
+**Why It Matters:** Specific prompts help the AI understand exactly what you want, leading to focused, actionable responses.
+
+---
+
+### 2. Provide Context
+
+<Columns cols={2}>
+  <div>
+    **❌ No Context:**
+    - "Is NVDA a good buy?"
+  </div>
+  <div>
+    **✅ With Context:**
+    - "Is NVDA a good buy for a 10-year growth portfolio, considering I already have 20% in tech stocks?"
+  </div>
+</Columns>
+
+**Why It Matters:** Context helps the AI tailor recommendations to your situation (time horizon, risk tolerance, existing holdings).
+
+---
+
+### 3. Ask Follow-Up Questions
+
+The AI remembers your conversation context. Build on previous answers:
+
+**Conversation Example:**
+1. **You:** "Analyze Tesla's recent earnings"
+2. **AI:** [Provides earnings analysis]
+3. **You:** "What are the main risks?" *(builds on context)*
+4. **AI:** [Focuses on Tesla-specific risks]
+5. **You:** "How does this compare to traditional automakers?" *(further refinement)*
+6. **AI:** [Compares Tesla to Ford, GM, etc.]
+
+---
+
+### 4. Request Specific Formats
+
+Tell the AI how you want the information structured:
+
+- "Give me a bull and bear case for Netflix"
+- "Create a 5-point checklist for evaluating this stock"
+- "Compare these 3 stocks in a table format"
+- "Summarize in 3 bullet points"
+
+---
+
+### 5. Combine Multiple Analyses
+
+The AI can handle complex, multi-part questions:
+
+**Good Multi-Part Prompt:**
+```
+"Analyze Apple's fundamentals (revenue growth, margins, cash flow),
+then check if the technicals support buying now (RSI, moving averages),
+and finally compare its valuation to Microsoft and Google"
+```
+
+The AI will systematically work through each part.
+
+## Prompt Templates by Use Case
+
+### Stock Analysis
+
+<Accordion title="Quick Overview" icon="magnifying-glass">
+**Template:**
+```
+"Give me a quick overview of [TICKER]: current price, P/E ratio,
+revenue growth, and AI rating"
+```
+
+**Example:**
+```
+"Give me a quick overview of MSFT: current price, P/E ratio,
+revenue growth, and AI rating"
+```
+
+**What You'll Get:**
+- Current stock price and market cap
+- Valuation metrics (P/E, P/S, PEG)
+- Growth rates (revenue, earnings)
+- AI buy/hold/sell rating with reasoning
+</Accordion>
+
+<Accordion title="Deep Fundamental Analysis" icon="chart-bar">
+**Template:**
+```
+"Analyze [COMPANY]'s fundamentals: revenue growth, margins,
+free cash flow, debt levels, and ROE. How do they compare to [COMPETITORS]?"
+```
+
+**Example:**
+```
+"Analyze Microsoft's fundamentals: revenue growth, margins,
+free cash flow, debt levels, and ROE. How do they compare to Google and Amazon?"
+```
+
+**What You'll Get:**
+- Detailed financial metrics
+- Trend analysis (improving/declining)
+- Peer comparison
+- Strengths and weaknesses
+</Accordion>
+
+<Accordion title="Valuation Assessment" icon="dollar-sign">
+**Template:**
+```
+"What's a fair value for [TICKER] based on fundamentals?
+Compare to historical averages and peers"
+```
+
+**Example:**
+```
+"What's a fair value for NVDA based on fundamentals?
+Compare to historical averages and peers"
+```
+
+**What You'll Get:**
+- Fair value estimate (DCF model)
+- P/E vs historical average
+- P/E vs sector average
+- PEG ratio analysis
+- Upside/downside assessment
+</Accordion>
+
+<Accordion title="Technical Analysis" icon="chart-candlestick">
+**Template:**
+```
+"What do the technicals look like for [TICKER]? Is this a good entry point?
+Check RSI, moving averages, and support/resistance levels"
+```
+
+**Example:**
+```
+"What do the technicals look like for TSLA? Is this a good entry point?
+Check RSI, moving averages, and support/resistance levels"
+```
+
+**What You'll Get:**
+- RSI (overbought/oversold)
+- Moving average analysis (50/200 SMA)
+- Support/resistance levels
+- Entry/exit timing suggestions
+</Accordion>
+
+### Earnings Research
+
+<Accordion title="Earnings Summary" icon="calculator">
+**Template:**
+```
+"Analyze [TICKER]'s recent earnings. Did they beat estimates?
+What's the guidance? How did the stock react?"
+```
+
+**Example:**
+```
+"Analyze Apple's recent earnings. Did they beat estimates?
+What's the guidance? How did the stock react?"
+```
+
+**What You'll Get:**
+- EPS and revenue vs estimates
+- Key metrics breakdown
+- Management guidance summary
+- Market reaction analysis
+</Accordion>
+
+<Accordion title="Transcript Search" icon="search">
+**Template:**
+```
+"Search [TICKER]'s earnings transcripts for mentions of [KEYWORD/TOPIC].
+What did management say?"
+```
+
+**Example:**
+```
+"Search Tesla's earnings transcripts for mentions of 'Full Self-Driving'
+and 'Robotaxi'. What did management say?"
+```
+
+**What You'll Get:**
+- Direct quotes from transcripts
+- Context around mentions
+- Trend analysis (increasing/decreasing mentions)
+- Key takeaways
+</Accordion>
+
+### Portfolio Management
+
+<Accordion title="Portfolio Analysis" icon="briefcase">
+**Template:**
+```
+"Analyze my portfolio: [LIST HOLDINGS WITH %].
+What are the sector concentrations, risks, and rebalancing suggestions?"
+```
+
+**Example:**
+```
+"Analyze my portfolio: 30% AAPL, 25% GOOGL, 20% MSFT, 15% NVDA, 10% AMZN.
+What are the sector concentrations, risks, and rebalancing suggestions?"
+```
+
+**What You'll Get:**
+- Sector breakdown
+- Correlation analysis
+- Risk assessment (beta, volatility)
+- Diversification score
+- Specific rebalancing recommendations
+</Accordion>
+
+<Accordion title="Portfolio Comparison" icon="scale-balanced">
+**Template:**
+```
+"Compare two portfolios:
+Portfolio A: [holdings]
+Portfolio B: [holdings]
+Which is better for [GOAL]?"
+```
+
+**Example:**
+```
+"Compare two portfolios:
+Portfolio A: 60% VOO (S&P 500 ETF), 30% VNQ (REIT ETF), 10% BND (Bond ETF)
+Portfolio B: 40% AAPL, 30% GOOGL, 20% MSFT, 10% NVDA
+Which is better for long-term growth with moderate risk?"
+```
+
+**What You'll Get:**
+- Risk/return comparison
+- Diversification analysis
+- Suitability for stated goal
+- Recommendation with reasoning
+</Accordion>
+
+### Stock Screening
+
+<Accordion title="Custom Screening" icon="filter">
+**Template:**
+```
+"Find stocks with [CRITERIA 1], [CRITERIA 2], and [CRITERIA 3].
+Show me the top 10 ranked by [METRIC]"
+```
+
+**Example:**
+```
+"Find stocks with P/E < 20, revenue growth > 20%, and debt-to-equity < 1.
+Show me the top 10 ranked by revenue growth"
+```
+
+**What You'll Get:**
+- List of matching stocks
+- Key metrics for each
+- Ranking by specified criteria
+- Brief reasoning for top picks
+</Accordion>
+
+<Accordion title="Idea Generation" icon="lightbulb">
+**Template:**
+```
+"What are the best [STRATEGY] stocks right now? Give me 5 ideas with reasoning"
+```
+
+**Examples:**
+- "What are the best momentum stocks in tech right now? Give me 5 ideas with reasoning"
+- "What are the best dividend growth stocks? Give me 5 ideas with reasoning"
+- "What are the best undervalued healthcare stocks? Give me 5 ideas with reasoning"
+
+**What You'll Get:**
+- 5 stock picks matching strategy
+- Investment thesis for each
+- Key metrics and catalysts
+- Risk factors
+</Accordion>
+
+### Comparison Analysis
+
+<Accordion title="Head-to-Head Comparison" icon="scale-balanced">
+**Template:**
+```
+"Compare [STOCK A] vs [STOCK B] across fundamentals, valuation,
+growth prospects, and risks. Which is the better buy for [GOAL]?"
+```
+
+**Example:**
+```
+"Compare Tesla vs BYD across fundamentals, valuation,
+growth prospects, and risks. Which is the better buy for EV exposure?"
+```
+
+**What You'll Get:**
+- Side-by-side metrics comparison
+- Qualitative comparison (moat, management, strategy)
+- Pros and cons of each
+- Recommendation for stated goal
+</Accordion>
+
+<Accordion title="Sector Comparison" icon="layer-group">
+**Template:**
+```
+"Compare the [SECTOR 1] and [SECTOR 2] sectors.
+Which has better prospects for the next 12 months?"
+```
+
+**Example:**
+```
+"Compare the technology and healthcare sectors.
+Which has better prospects for the next 12 months?"
+```
+
+**What You'll Get:**
+- Sector performance trends
+- Valuation comparison (P/E, P/S)
+- Growth outlook
+- Key risks for each
+- Recommendation
+</Accordion>
+
+### Risk Assessment
+
+<Accordion title="Risk Analysis" icon="triangle-exclamation">
+**Template:**
+```
+"What are the main risks in investing in [TICKER]?
+Rate them by likelihood and potential impact"
+```
+
+**Example:**
+```
+"What are the main risks in investing in NVDA?
+Rate them by likelihood and potential impact"
+```
+
+**What You'll Get:**
+- List of key risks (business, financial, market, regulatory)
+- Likelihood assessment (high/medium/low)
+- Potential impact (high/medium/low)
+- Mitigation strategies
+</Accordion>
+
+<Accordion title="Downside Scenario" icon="arrow-trend-down">
+**Template:**
+```
+"What's the bear case for [TICKER]? What could go wrong and
+what's the downside to the stock price?"
+```
+
+**Example:**
+```
+"What's the bear case for Tesla? What could go wrong and
+what's the downside to the stock price?"
+```
+
+**What You'll Get:**
+- Bearish arguments
+- Specific risks and scenarios
+- Downside price target
+- Probability assessment
+</Accordion>
+
+## Advanced Prompt Techniques
+
+### Chain of Thought
+
+Break complex questions into steps:
+
+**Prompt:**
+```
+"Let's analyze Microsoft step by step:
+1. First, review the fundamentals (growth, margins, cash flow)
+2. Then, assess the valuation vs historical and peers
+3. Next, check the technicals for entry timing
+4. Finally, give me a buy/hold/sell recommendation with reasoning"
+```
+
+**Why It Works:** Structured approach ensures thorough analysis.
+
+---
+
+### Comparative Analysis
+
+Force the AI to weigh trade-offs:
+
+**Prompt:**
+```
+"I'm choosing between Apple and Microsoft for a long-term hold.
+Create a table comparing:
+- Revenue growth (3-year CAGR)
+- Operating margins
+- P/E ratio and PEG ratio
+- Moat strength
+- AI strategy and execution
+Then recommend which is better for my goals"
+```
+
+**Why It Works:** Side-by-side comparison clarifies differences.
+
+---
+
+### Scenario Planning
+
+Ask "what if" questions:
+
+**Prompt:**
+```
+"What would happen to my tech-heavy portfolio (60% tech)
+in these scenarios:
+1. Fed raises rates 2% more
+2. Recession hits in 2025
+3. AI hype cycle ends
+Give me the likely outcomes and how to prepare"
+```
+
+**Why It Works:** Helps you prepare for different market conditions.
+
+---
+
+### Devil's Advocate
+
+Challenge your own assumptions:
+
+**Prompt:**
+```
+"I'm bullish on Tesla and own 15% of my portfolio in TSLA.
+Play devil's advocate and give me the strongest bear case.
+Should I reduce my position?"
+```
+
+**Why It Works:** Counteracts confirmation bias, reveals blind spots.
+
+## Common Mistakes to Avoid
+
+<Warning>
+**❌ Being Too Vague**
+
+Bad: "Is the market good?"
+
+Better: "Are tech stocks overvalued right now based on P/E ratios and growth expectations?"
+</Warning>
+
+<Warning>
+**❌ Asking Yes/No Questions**
+
+Bad: "Should I buy Tesla?"
+
+Better: "Analyze Tesla's fundamentals, valuation, and risks. Is it a good buy for a 5-year hold?"
+</Warning>
+
+<Warning>
+**❌ Not Providing Your Situation**
+
+Bad: "What stocks should I buy?"
+
+Better: "I'm 35 years old with a 20-year time horizon and high risk tolerance. What growth stocks should I consider?"
+</Warning>
+
+<Warning>
+**❌ Ignoring Follow-Ups**
+
+Bad: Getting one answer and moving on
+
+Better: Ask clarifying questions: "Can you elaborate on that risk?" or "How does that compare to competitors?"
+</Warning>
+
+## Prompt Library
+
+Copy and customize these proven prompts:
+
+### Quick Research
+- "Is [TICKER] a good buy right now? Give me the 3 key reasons to buy and 3 reasons to pass"
+- "What happened to [TICKER] today? Why is it up/down [X]%?"
+- "Compare [TICKER]'s valuation to its 5-year average. Is it cheap or expensive?"
+
+### Deep Dive
+- "Do a complete analysis of [TICKER]: fundamentals, valuation, technicals, and risks. Should I invest?"
+- "Search [TICKER]'s earnings transcripts for [TOPIC]. What are the key takeaways?"
+- "What are [TICKER]'s competitive advantages and threats from competitors?"
+
+### Portfolio
+- "Review my portfolio and identify my biggest risks"
+- "How should I allocate $10,000 across my existing holdings to rebalance?"
+- "If I had to cut my portfolio from 30 stocks to 15, which should I keep?"
+
+### Screening
+- "Find dividend stocks with yield above 4%, 10+ years of increases, and payout ratio below 75%"
+- "What are the top 10 momentum stocks in [SECTOR] right now?"
+- "Find undervalued stocks in [SECTOR] with P/E below sector average and growth above 15%"
+
+## Learn More
+
+<CardGroup cols={2}>
+  <Card
+    title="AI Assistant Guide"
+    icon="robot"
+    href="/guides/features/ai-assistant"
+  >
+    Learn about all 28 AI tools available
+  </Card>
+  <Card
+    title="Stock Research"
+    icon="magnifying-glass-chart"
+    href="/guides/how-to/stock-research"
+  >
+    Apply prompts in systematic research workflows
+  </Card>
+  <Card
+    title="Portfolio Analysis"
+    icon="briefcase"
+    href="/guides/how-to/portfolio-analysis"
+  >
+    Use prompts for portfolio optimization
+  </Card>
+  <Card
+    title="Use Cases"
+    icon="users"
+    href="/guides/use-cases/busy-professional"
+  >
+    See real-world prompt examples
+  </Card>
+</CardGroup>

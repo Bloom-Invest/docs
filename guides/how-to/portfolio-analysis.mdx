@@ -1,0 +1,538 @@
+---
+title: "Portfolio Analysis & Optimization"
+description: "Build and Manage Better Portfolios with AI"
+---
+
+## Overview
+
+Learn how to analyze, optimize, and manage your investment portfolio using Bloom's AI-powered tools. From diversification analysis to rebalancing strategies, this guide covers everything you need to build a better portfolio.
+
+<Frame caption="Watch: Creating and Analyzing a Portfolio">
+  <video
+    controls
+    style={{ width: '100%', borderRadius: '8px' }}
+  >
+    <source src="/assets/videos/Bloom Create Portfolio.mp4" type="video/mp4" />
+  </video>
+</Frame>
+
+## Creating a Portfolio
+
+<Steps>
+  <Step title="Navigate to Portfolios">
+    Click on "Portfolios" in the Bloom navigation menu
+  </Step>
+
+  <Step title="Create New Portfolio">
+    Click "Create Portfolio" and give it a name (e.g., "Retirement", "Growth", "Income")
+  </Step>
+
+  <Step title="Add Holdings">
+    Enter stock tickers and allocation percentages:
+
+    **Example:**
+    - AAPL: 25%
+    - GOOGL: 20%
+    - MSFT: 20%
+    - NVDA: 15%
+    - AMZN: 20%
+
+    Total must equal 100%
+  </Step>
+
+  <Step title="Save Portfolio">
+    Save the portfolio—it will sync across all your devices
+  </Step>
+</Steps>
+
+## AI-Powered Portfolio Analysis
+
+### Get Comprehensive Review
+
+**AI Prompt:**
+```
+"Analyze my portfolio: 25% AAPL, 20% GOOGL, 20% MSFT, 15% NVDA, 20% AMZN.
+What are the risks and how should I rebalance?"
+```
+
+**What the AI Analyzes:**
+
+<Accordion title="Sector Concentration" icon="chart-pie" defaultOpen>
+**What It Checks:**
+- % allocated to each sector (Tech, Healthcare, Finance, etc.)
+- Concentration risk (>40% in one sector = high risk)
+- Sector correlation (do sectors move together?)
+
+**Example Output:**
+> **Sector Breakdown:**
+> - Technology: 100%
+> - Healthcare: 0%
+> - Financials: 0%
+> - Consumer: 0%
+> - Utilities: 0%
+>
+> **Risk Assessment:** ⚠️ EXTREMELY HIGH
+> - 100% concentration in technology sector
+> - Highly vulnerable to tech sell-offs
+> - No defensive exposure
+>
+> **Recommendation:** Reduce tech to 60-70%, add healthcare (15%), consumer staples (10%), utilities (10%)
+</Accordion>
+
+<Accordion title="Stock Correlation" icon="link">
+**What It Checks:**
+- How closely holdings move together
+- Correlation coefficient (-1 to +1)
+- Diversification quality
+
+**Example Output:**
+> **Correlation Matrix:**
+> ```
+>        AAPL  GOOGL  MSFT  NVDA  AMZN
+> AAPL   1.00   0.75  0.82  0.68  0.71
+> GOOGL  0.75   1.00  0.78  0.65  0.80
+> MSFT   0.82   0.78  1.00  0.70  0.74
+> NVDA   0.68   0.65  0.70  1.00  0.62
+> AMZN   0.71   0.80  0.74  0.62  1.00
+> ```
+>
+> **Average Correlation:** 0.73 (HIGH)
+> - These stocks tend to move together
+> - Limited diversification benefit
+> - Portfolio will be volatile
+>
+> **Recommendation:** Add uncorrelated assets (REITs, commodities, international)
+</Accordion>
+
+<Accordion title="Risk Metrics" icon="triangle-exclamation">
+**What It Calculates:**
+- Portfolio beta (volatility vs market)
+- Standard deviation (price volatility)
+- Max drawdown (worst decline)
+- Sharpe ratio (risk-adjusted returns)
+
+**Example Output:**
+> **Risk Metrics:**
+> - **Beta:** 1.38 (38% more volatile than S&P 500)
+> - **Std Deviation:** 24% annually
+> - **Max Drawdown:** -42% (during 2022 tech sell-off)
+> - **Sharpe Ratio:** 1.2 (good risk-adjusted returns)
+>
+> **Risk Level:** HIGH
+> - Expect large swings (-20% to +30% annually)
+> - Not suitable for conservative investors
+> - Consider reducing volatility with bonds/defensive stocks
+</Accordion>
+
+<Accordion title="Diversification Score" icon="star">
+**What It Measures:**
+- Number of holdings
+- Sector balance
+- Correlation
+- Overall diversification quality
+
+**Example Output:**
+> **Diversification Score:** 3/10 ⚠️
+>
+> **Breakdown:**
+> - Holdings count: 5 stocks (need 15-20 for good diversification)
+> - Sector diversity: 1 sector (need 5-6 sectors)
+> - Correlation: 0.73 (too high, want below 0.5)
+> - International exposure: 0% (want 10-20%)
+>
+> **Grade:** POOR - Lacks meaningful diversification
+</Accordion>
+
+## Rebalancing Strategies
+
+### When to Rebalance
+
+<CardGroup cols={2}>
+  <Card title="Time-Based" icon="calendar">
+    Rebalance on a schedule regardless of market conditions:
+    - Quarterly (every 3 months)
+    - Semi-annually (every 6 months)
+    - Annually (once per year)
+
+    **Pros:** Disciplined, prevents emotional decisions
+
+    **Cons:** May miss opportunities, ignores market conditions
+  </Card>
+
+  <Card title="Threshold-Based" icon="percentage">
+    Rebalance when allocations drift beyond targets:
+    - 5% threshold (e.g., 25% → 30%+)
+    - 10% threshold (more relaxed)
+
+    **Pros:** Only rebalance when necessary, tax-efficient
+
+    **Cons:** Requires monitoring
+  </Card>
+
+  <Card title="Event-Based" icon="bell">
+    Rebalance after significant events:
+    - Major market correction
+    - Earnings disappointment
+    - Thesis change
+    - New capital to invest
+
+    **Pros:** Responsive to changes, opportunistic
+
+    **Cons:** Requires active management
+  </Card>
+
+  <Card title="Hybrid Approach" icon="gears">
+    Combine methods:
+    - Annual review minimum
+    - Plus threshold triggers (>10% drift)
+    - Plus event-based adjustments
+
+    **Pros:** Best of all worlds
+
+    **Cons:** More complex
+  </Card>
+</CardGroup>
+
+### How to Rebalance
+
+**AI Prompt:**
+```
+"My portfolio drifted from target allocations.
+Target: 20% each in AAPL, GOOGL, MSFT, NVDA, AMZN
+Current: 30% NVDA, 22% AAPL, 18% GOOGL, 16% MSFT, 14% AMZN
+How should I rebalance?"
+```
+
+**AI Provides:**
+1. **Sell Recommendations:** Which stocks to trim and by how much
+2. **Buy Recommendations:** Which stocks to add to
+3. **Tax Considerations:** Short-term vs long-term gains
+4. **Trade Order:** Optimal sequence for rebalancing
+
+**Example Output:**
+> **Rebalancing Plan:**
+>
+> **Sell:**
+> - NVDA: Sell 10% (trim from 30% → 20%)
+> - AAPL: Sell 2% (trim from 22% → 20%)
+>
+> **Buy:**
+> - GOOGL: Buy 2% (increase from 18% → 20%)
+> - MSFT: Buy 4% (increase from 16% → 20%)
+> - AMZN: Buy 6% (increase from 14% → 20%)
+>
+> **Tax Impact:**
+> - NVDA: Long-term gain (held 2+ years) → 15-20% tax
+> - AAPL: Short-term gain (held 8 months) → ordinary income tax
+>
+> **Recommendation:** Consider waiting 4 months for AAPL to become long-term, or offset with tax-loss harvesting
+
+## Portfolio Backtesting
+
+<Frame caption="Watch: Backtesting a Portfolio">
+  <video
+    controls
+    style={{ width: '100%', borderRadius: '8px' }}
+  >
+    <source src="/assets/videos/Bloom Portfolio Backtest.mp4" type="video/mp4" />
+  </video>
+</Frame>
+
+### Test Historical Performance
+
+**AI Prompt:**
+```
+"Backtest my portfolio: 25% AAPL, 20% GOOGL, 20% MSFT, 15% NVDA, 20% AMZN
+over the past 5 years. How did it perform vs S&P 500?"
+```
+
+**What You Get:**
+
+<Accordion title="Returns Analysis" icon="chart-line">
+**Metrics:**
+- Cumulative return (total % gain/loss)
+- Annualized return (CAGR)
+- Year-by-year breakdown
+- Comparison to S&P 500 and Nasdaq
+
+**Example:**
+> **5-Year Backtest Results:**
+> - Cumulative Return: +187% (portfolio) vs +95% (S&P 500)
+> - Annualized Return: 23.5% vs 14.3%
+> - Outperformance: +9.2% per year
+> - $10,000 → $28,700 (portfolio) vs $19,500 (S&P 500)
+</Accordion>
+
+<Accordion title="Risk Analysis" icon="shield">
+**Metrics:**
+- Max drawdown (worst peak-to-trough decline)
+- Volatility (standard deviation)
+- Sharpe ratio (return per unit of risk)
+- Recovery time after crashes
+
+**Example:**
+> **Risk Metrics:**
+> - Max Drawdown: -45% (March 2020, COVID crash)
+> - Recovery Time: 4 months
+> - Annual Volatility: 28% vs 18% (S&P 500)
+> - Sharpe Ratio: 1.1 (good risk-adjusted returns)
+</Accordion>
+
+<Accordion title="Year-by-Year" icon="calendar">
+**Annual Breakdown:**
+
+| Year | Portfolio | S&P 500 | Outperformance |
+|------|-----------|---------|----------------|
+| 2020 | +42%      | +18%    | +24%           |
+| 2021 | +38%      | +27%    | +11%           |
+| 2022 | -32%      | -18%    | -14%           |
+| 2023 | +55%      | +24%    | +31%           |
+| 2024 | +28%      | +22%    | +6%            |
+
+**Insights:**
+- Outperformed in bull markets (2020, 2021, 2023, 2024)
+- Underperformed in bear market (2022)
+- Higher volatility but higher returns
+</Accordion>
+
+## Portfolio Construction Strategies
+
+### Strategy 1: Core-Satellite
+
+**Structure:**
+- **Core (60-70%):** Stable, diversified holdings
+  - S&P 500 ETF (SPY, VOO): 40%
+  - International ETF (VXUS): 15%
+  - Bond ETF (BND, AGG): 10%
+
+- **Satellite (30-40%):** Higher-conviction picks
+  - Growth stocks (NVDA, TSLA): 15%
+  - Sector bets (AI, clean energy): 10%
+  - Individual ideas from Bloom: 10%
+
+**Pros:**
+- Balanced approach
+- Core provides stability
+- Satellite for outperformance
+
+**Ideal For:** Most investors
+
+---
+
+### Strategy 2: Dividend Growth
+
+**Structure:**
+- **Dividend Aristocrats (40%):**
+  - JNJ, PG, KO, MCD (consumer staples)
+
+- **High-Yield REITs (30%):**
+  - O (Realty Income), VNQ (Vanguard REIT ETF)
+
+- **Dividend Growth (30%):**
+  - MSFT, AAPL, V (growing dividends + capital appreciation)
+
+**Goals:**
+- Yield: 3-4%
+- Dividend growth: 7-10% annually
+- Capital appreciation: 8-12% annually
+
+**Ideal For:** Income investors, retirees
+
+---
+
+### Strategy 3: All-Weather
+
+**Structure:**
+- **Stocks (40%):** Diversified across sectors
+- **Bonds (25%):** Gov't and corporate bonds
+- **Commodities (15%):** Gold (GLD), commodities (DBC)
+- **REITs (10%):** Real estate exposure
+- **Cash (10%):** Dry powder for opportunities
+
+**Goals:**
+- Reduce volatility
+- Perform in all market conditions
+- Low correlation between assets
+
+**Ideal For:** Conservative investors, near retirement
+
+---
+
+### Strategy 4: Aggressive Growth
+
+**Structure:**
+- **Tech Leaders (50%):** NVDA, MSFT, GOOGL, META
+- **Disruptors (30%):** TSLA, PLTR, COIN, SHOP
+- **Small-Cap Growth (20%):** High-growth small caps
+
+**Goals:**
+- Maximize returns (target 20%+ annually)
+- Accept high volatility (50%+ drawdowns possible)
+- Long time horizon (10+ years)
+
+**Ideal For:** Young investors, high risk tolerance
+
+## Optimization Techniques
+
+### Tax-Loss Harvesting
+
+**AI Prompt:**
+```
+"Which holdings in my portfolio are down and can be tax-loss harvested?"
+```
+
+**Strategy:**
+1. Identify losers (stocks down >10%)
+2. Sell to realize loss
+3. Buy similar (not identical) stock
+4. Use loss to offset gains
+
+**Example:**
+> Sell AMD (down 15%) → Buy NVDA
+> Loss: $3,000 → Offsets $3,000 in capital gains
+
+---
+
+### Sector Rotation
+
+**AI Prompt:**
+```
+"Which sectors are outperforming right now? Should I rotate my portfolio?"
+```
+
+**Strategy:**
+- Identify sector trends
+- Rotate into leaders
+- Reduce exposure to laggards
+
+**Example:**
+> **Current Leaders:** Energy, Utilities, Healthcare
+> **Current Laggards:** Tech, Consumer Discretionary
+>
+> **Action:** Trim tech (NVDA, GOOGL) by 10%, add energy (XLE ETF) and healthcare (JNJ, UNH)
+
+---
+
+### Risk Parity
+
+**Goal:** Balance risk contribution, not dollar amounts
+
+**AI Prompt:**
+```
+"Optimize my portfolio for equal risk contribution across holdings"
+```
+
+**Concept:**
+- Volatile stocks get smaller allocations
+- Stable stocks get larger allocations
+- Result: Balanced risk, smoother returns
+
+**Example:**
+> **Traditional (Equal Weight):**
+> - NVDA (high vol): 20%
+> - JNJ (low vol): 20%
+>
+> **Risk Parity:**
+> - NVDA (high vol): 10%
+> - JNJ (low vol): 30%
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Diversify Properly" icon="layer-group">
+    **How Many Stocks?**
+    - Minimum: 15-20 stocks for good diversification
+    - Sweet spot: 20-30 stocks
+    - Too many: > 50 stocks (diminishing returns, hard to track)
+
+    **Sectors:**
+    - Cover 6-8 sectors minimum
+    - No sector > 30% (unless index fund)
+    - Tech, Healthcare, Financials, Consumer, Energy, Industrials, Utilities, REITs
+
+    **Geography:**
+    - US: 70-80%
+    - International developed: 15-20%
+    - Emerging markets: 5-10%
+  </Accordion>
+
+  <Accordion title="Review Regularly" icon="calendar-check">
+    **Quarterly Review:**
+    - Check drift from target allocations
+    - Review earnings for holdings
+    - Rebalance if needed
+
+    **Annual Deep Dive:**
+    - Reassess investment theses
+    - Update fair value estimates
+    - Consider tax-loss harvesting
+    - Portfolio performance review
+
+    **After Major Events:**
+    - Earnings disappointments
+    - Management changes
+    - Regulatory issues
+    - Market crashes
+  </Accordion>
+
+  <Accordion title="Document Your Decisions" icon="file-pen">
+    **Keep Records:**
+    - Initial investment thesis (why you bought)
+    - Target allocations
+    - Entry prices and dates
+    - Rebalancing trades
+    - Exit criteria (when to sell)
+
+    **Benefits:**
+    - Learn from mistakes
+    - Avoid emotional decisions
+    - Track performance accurately
+    - Tax records
+  </Accordion>
+
+  <Accordion title="Use Dollar-Cost Averaging" icon="coins">
+    **For New Investments:**
+    - Invest fixed amount regularly (monthly)
+    - Buy more shares when prices low
+    - Buy fewer shares when prices high
+    - Reduces timing risk
+
+    **Example:**
+    - Invest $1,000/month into portfolio
+    - Split across holdings (rebalance)
+    - Automatic via brokerage
+  </Accordion>
+</AccordionGroup>
+
+## Learn More
+
+<CardGroup cols={2}>
+  <Card
+    title="AI Assistant"
+    icon="robot"
+    href="/guides/features/ai-assistant"
+  >
+    Use AI for portfolio analysis and optimization
+  </Card>
+  <Card
+    title="Stock Research"
+    icon="magnifying-glass-chart"
+    href="/guides/how-to/stock-research"
+  >
+    Research individual holdings thoroughly
+  </Card>
+  <Card
+    title="Use Cases"
+    icon="users"
+    href="/guides/use-cases/long-term-investor"
+  >
+    See how others manage portfolios
+  </Card>
+  <Card
+    title="Daily Investment Ideas"
+    icon="lightbulb"
+    href="/guides/features/daily-ideas"
+  >
+    Discover stocks for your portfolio
+  </Card>
+</CardGroup>
