@@ -1,0 +1,269 @@
+---
+title: "Advanced: Gambling Theory"
+description: "Use Kelly Criterion and probability theory for position sizing"
+---
+
+<Warning>
+**Advanced strategy for experienced investors only.**
+
+Gambling theory requires understanding probability, expected value, and risk of ruin. Misapplication can lead to significant losses.
+</Warning>
+
+---
+
+## What is Gambling Theory in Investing?
+
+Gambling theory applies mathematical frameworks from casino games to investing:
+- **Kelly Criterion:** Optimal position sizing
+- **Expected Value (EV):** Probability-weighted outcomes
+- **Risk of Ruin:** Chance of losing everything
+
+**Why use it:** Maximize long-term growth while controlling risk
+
+**When to use it:** When you have high conviction backed by data
+
+---
+
+## The Kelly Criterion
+
+### Formula
+
+**Kelly % = (Win% × Avg Win - Loss% × Avg Loss) / Avg Win**
+
+**Simplified:**
+- **Win% =** Probability trade succeeds (e.g., 60%)
+- **Avg Win =** Average gain when right (e.g., 20%)
+- **Loss% =** Probability trade fails (e.g., 40%)
+- **Avg Loss =** Average loss when wrong (e.g., 10%)
+
+**Example calculation:**
+```
+Kelly % = (0.60 × 20 - 0.40 × 10) / 20
+        = (12 - 4) / 20
+        = 0.40 or 40%
+```
+
+**Recommended:** Use **Half Kelly (20%)** to reduce volatility
+
+---
+
+## Using Bloom to Calculate Kelly
+
+**Prompt:** "Analyze this trade for expected value:
+- Stock: NVDA
+- Entry: $850
+- Target: $1,000 (+17.6%)
+- Stop-loss: $800 (-5.9%)
+- Confidence: 65%"
+
+**AI analysis:**
+- **Win probability:** 65%
+- **Win amount:** +$150 (17.6%)
+- **Loss probability:** 35%
+- **Loss amount:** -$50 (5.9%)
+
+**Kelly calculation:**
+```
+Kelly % = (0.65 × 150 - 0.35 × 50) / 150
+        = (97.5 - 17.5) / 150
+        = 0.53 or 53%
+```
+
+**Half Kelly = 26.5%** of portfolio in NVDA
+
+**Ask Bloom:** "What position size should I use for this trade using Kelly Criterion?"
+
+---
+
+## Expected Value (EV) Analysis
+
+### What is EV?
+
+**EV = (Win% × Win$) - (Loss% × Loss$)**
+
+**Positive EV (+EV):** Take the trade
+**Negative EV (-EV):** Skip the trade
+
+---
+
+### Example: Evaluating a Stock Trade
+
+**Stock:** Tesla at $250
+**Target:** $300 (+20%)
+**Stop-loss:** $230 (-8%)
+**Your analysis:** 70% chance of hitting target
+
+**EV calculation:**
+```
+EV = (0.70 × $50) - (0.30 × $20)
+   = $35 - $6
+   = +$29 per $250 invested
+```
+
+**Result:** +EV trade (expected $29 profit per $250 risked)
+
+**Ask Bloom:** "Calculate the expected value of buying Tesla at $250 with $300 target and $230 stop-loss"
+
+---
+
+## Risk of Ruin
+
+### What is it?
+
+**Risk of Ruin:** Probability of losing your entire capital
+
+**Formula (simplified):**
+- Never risk more than **2% per trade**
+- Keep **at least 20 uncorrelated positions** to avoid total loss
+
+---
+
+### Example Scenario
+
+**Portfolio:** $100,000
+**Max risk per trade:** 2% ($2,000)
+**Stop-loss:** 10% below entry
+
+**Position size:** $2,000 / 0.10 = $20,000 (20% of portfolio)
+
+**If stop-loss hits:** Lose $2,000 (2% of portfolio)
+**If target hits:** Gain varies by upside
+
+**Ask Bloom:** "If I risk 2% per trade, how much should I invest in a stock with a 10% stop-loss?"
+
+---
+
+## Applying Gambling Theory to Stock Picks
+
+### Step 1: Assess Probability
+
+**Ask Bloom:** "What's the probability AAPL reaches $200 in 6 months?"
+
+**AI considers:**
+- Historical volatility
+- Analyst targets
+- Technical indicators
+- Earnings momentum
+
+**AI returns:** "65% probability based on current trends"
+
+---
+
+### Step 2: Define Win/Loss Scenarios
+
+**Win scenario:** Stock hits $200 (+15%)
+**Loss scenario:** Stop-loss at $165 (-5%)
+
+---
+
+### Step 3: Calculate EV
+
+**EV = (0.65 × 15%) - (0.35 × 5%)**
+**EV = 9.75% - 1.75% = +8% expected return**
+
+**Conclusion:** +EV trade
+
+---
+
+### Step 4: Size Position Using Kelly
+
+**Kelly % = (0.65 × 15 - 0.35 × 5) / 15 = 43%**
+**Half Kelly = 21.5% of portfolio**
+
+**On $100k portfolio:** Invest $21,500 in AAPL
+
+---
+
+## When NOT to Use Gambling Theory
+
+<Warning>
+**Avoid gambling theory when:**
+- You can't quantify probabilities (no data)
+- The outcome is binary (all-or-nothing bets)
+- You're emotional about the trade (bias clouds judgment)
+- Position would exceed 25% of portfolio (too concentrated)
+- You don't understand the math (stick to simple 5-10% positions)
+</Warning>
+
+---
+
+## Practical Bloom Workflows
+
+### Workflow 1: Calculate Kelly Position Size
+
+**Prompt:** "I want to buy [STOCK]. Help me calculate Kelly position size:
+- Entry price: $X
+- Target price: $Y
+- Stop-loss: $Z
+- My confidence level: [%]"
+
+**AI returns:** Recommended position size and EV
+
+---
+
+### Workflow 2: Validate High-Conviction Trades
+
+**Prompt:** "Analyze this trade for expected value:
+- Stock: [TICKER]
+- Thesis: [WHY YOU LIKE IT]
+- Upside: [%]
+- Downside: [%]
+- Time horizon: [MONTHS]"
+
+**AI returns:** Probability assessment, EV calculation, position sizing
+
+---
+
+### Workflow 3: Portfolio-Level Risk Management
+
+**Prompt:** "Review my portfolio for risk of ruin:
+- Total capital: $X
+- Number of positions: Y
+- Largest position: Z%
+- Average correlation: [LOW/MEDIUM/HIGH]"
+
+**AI returns:** Risk assessment and diversification recommendations
+
+---
+
+## Example: Full Gambling Theory Analysis
+
+**Stock:** Microsoft (MSFT)
+**Current price:** $400
+**Thesis:** Azure AI growth will drive earnings beat
+
+**Ask Bloom:** "Help me size a position in MSFT at $400"
+
+**AI analysis:**
+1. **Probability of 10%+ gain:** 70% (based on earnings momentum, analyst upgrades)
+2. **Upside target:** $450 (+12.5%)
+3. **Downside stop:** $380 (-5%)
+4. **EV calculation:** (0.70 × 12.5) - (0.30 × 5) = +7.25% expected return
+5. **Kelly %:** (0.70 × 50 - 0.30 × 20) / 50 = 58%
+6. **Half Kelly:** 29% of portfolio
+
+**Recommendation:** Invest 25-30% of portfolio in MSFT (cap at 30% for safety)
+
+---
+
+## Key Takeaways
+
+✅ **Kelly Criterion** optimizes position sizing for long-term growth
+✅ **Half Kelly** reduces volatility (recommended over full Kelly)
+✅ **EV analysis** separates good trades from bad trades
+✅ **Risk of Ruin** prevented by limiting risk to 2% per trade
+✅ **Use Bloom** to quantify probabilities and calculate optimal sizes
+
+**Remember:** Theory guides decisions, but never bet more than you can afford to lose.
+
+---
+
+## Further Reading
+
+- **Kelly Criterion deep dive:** Ask Bloom "Explain Kelly Criterion with examples"
+- **Position sizing:** Read [Create a Portfolio](/guides/how-to/create-portfolio)
+- **Risk management:** Ask Bloom "How do I manage portfolio risk?"
+
+<Card title="Calculate Optimal Position Sizes" icon="calculator" href="https://investwithbloom.com">
+Use Bloom's AI to analyze trades using gambling theory
+</Card>

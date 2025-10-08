@@ -1,112 +1,78 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Bloom Investment Platform",
+  "name": "Bloom - AI Investment Research",
   "colors": {
     "primary": "#16A34A",
     "light": "#07C983",
     "dark": "#15803D"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/logo/favicon.png",
   "navigation": {
     "home": "index",
-    "tabs": [
+    "pages": [
+      "quick-start"
+    ],
+    "groups": [
       {
-        "tab": "Guides",
-        "groups": [
-          {
-            "group": "Getting Started",
-            "pages": [
-              "guides/how-to/getting-started",
-              "guides/platform/mobile-apps"
-            ]
-          },
-          {
-            "group": "Features",
-            "pages": [
-              "guides/features/ai-assistant",
-              "guides/features/daily-ideas",
-              "guides/features/market-digests",
-              "guides/features/watchlist"
-            ]
-          },
-          {
-            "group": "How to Invest with Bloom",
-            "pages": [
-              "guides/how-to/stock-research",
-              "guides/how-to/portfolio-analysis",
-              "guides/how-to/ai-prompts"
-            ]
-          },
-          {
-            "group": "Use Cases",
-            "pages": [
-              "guides/use-cases/busy-professional",
-              "guides/use-cases/active-trader",
-              "guides/use-cases/long-term-investor"
-            ]
-          },
-          {
-            "group": "Platform & Technical",
-            "pages": [
-              "guides/platform/mcp-integration",
-              "guides/platform/data-sources",
-              "guides/platform/technical-stack",
-              "guides/reference/ai-tools",
-              "guides/reference/comparison"
-            ]
-          }
+        "group": "Investing Guides",
+        "pages": [
+          "guides/getting-started/newbie",
+          "guides/how-to/evaluate-stock",
+          "guides/how-to/create-portfolio",
+          "guides/how-to/find-ideas",
+          "guides/how-to/find-etfs",
+          "guides/advanced/gambling-theory"
+        ]
+      },
+      {
+        "group": "Reference",
+        "pages": [
+          "guides/features/ai-assistant",
+          "guides/platform/mcp-integration"
         ]
       }
     ],
     "global": {
       "anchors": [
         {
-          "anchor": "Web App",
-          "href": "https://investwithbloom.com",
-          "icon": "globe"
-        },
-        {
           "anchor": "iOS App",
-          "href": "https://apps.apple.com/app/bloom",
+          "href": "https://apps.apple.com/us/app/bloom-ai-investing-assistant/id1436348671",
           "icon": "mobile"
         },
         {
           "anchor": "Android App",
-          "href": "https://play.google.com/store/apps/details?id=com.bloom",
+          "href": "https://play.google.com/store/apps/details?id=com.bloom.invest&hl=en_US",
           "icon": "mobile"
         }
       ]
     }
   },
   "logo": {
-    "light": "/logo/splash.png",
-    "dark": "/logo/splash.png"
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg"
   },
   "navbar": {
     "links": [
       {
-        "label": "Support",
-        "href": "mailto:support@investwithbloom.com"
+        "label": "",
+        "icon": "discord",
+        "href": "https://discord.gg/w2Pud2D4Ts"
+      },
+      {
+        "label": "",
+        "icon": "x-twitter",
+        "href": "https://x.com/investwithbloom"
+      },
+      {
+        "label": "",
+        "icon": "whatsapp",
+        "href": "https://chat.whatsapp.com/F0m0yPWeh4XFu8iAv6Vmrx"
       }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Try Bloom",
-      "href": "https://investwithbloom.com"
-    }
+    ]
   },
   "contextual": {
-    "options": [
-      "copy",
-      "view",
-      "chatgpt",
-      "claude",
-      "perplexity",
-      "mcp",
-      "cursor",
-      "vscode"
-    ]
+    "options": []
   },
   "footer": {
     "socials": {
